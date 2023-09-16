@@ -1,0 +1,92 @@
+  [1m[35m (128.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (183.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230916110459)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "reset_password_token" varchar, "reset_password_token_expires_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230916110459"]]
+  [1m[36mTRANSACTION (204.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-16 11:18:13.144737"], ["updated_at", "2023-09-16 11:18:13.144737"]]
+  [1m[36mTRANSACTION (159.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users/register" for 127.0.0.1 at 2023-09-16 14:27:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started POST "/users/register" for 127.0.0.1 at 2023-09-16 14:28:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Kelvin", "email"=>"kim@g.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fbc0ca624b0>, params: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Kelvin", "email"=>"kim@g.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kim@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "reset_password_token", "reset_password_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kelvin"], ["email", "kim@g.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_token_expires_at", "[FILTERED]"], ["created_at", "2023-09-16 11:28:53.637816"], ["updated_at", "2023-09-16 11:28:53.637816"]]
+  ↳ app/controllers/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (156.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `create'
+Completed 201 Created in 572ms (Views: 1.0ms | ActiveRecord: 157.6ms | Allocations: 41473)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-16 14:29:25 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "authentication"=>{"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kim@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 325ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 941)
+
+
+Started POST "/reset_password" for 127.0.0.1 at 2023-09-16 14:30:53 +0300
+Processing by UsersController#reset_password as */*
+  Parameters: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Kelvin", "email"=>"kim@g.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kim@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `reset_password'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `reset_password'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "kim@g.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `reset_password'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = ?, "reset_password_token_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "[FILTERED]"], ["reset_password_token_expires_at", "[FILTERED]"], ["updated_at", "2023-09-16 11:30:53.921273"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `reset_password'
+  [1m[36mTRANSACTION (111.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `reset_password'
+Completed 200 OK in 128ms (Views: 0.5ms | ActiveRecord: 113.1ms | Allocations: 2991)
+
+
+Started PUT "/update_password/B3bWza_nf3uvBtJRXotWYA" for 127.0.0.1 at 2023-09-16 14:32:30 +0300
+Processing by UsersController#update_password as */*
+  Parameters: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "reset_password_token"=>"[FILTERED]", "user"=>{"name"=>"Kelvin", "email"=>"kim@g.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = ? LIMIT ?[0m  [["reset_password_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `update_password'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:28:in `update_password'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "kim@g.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `update_password'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "reset_password_token" = ?, "reset_password_token_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_token_expires_at", "[FILTERED]"], ["updated_at", "2023-09-16 11:32:30.738578"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `update_password'
+  [1m[36mTRANSACTION (159.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:28:in `update_password'
+Completed 200 OK in 507ms (Views: 0.3ms | ActiveRecord: 160.1ms | Allocations: 3176)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-16 14:34:35 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "authentication"=>{"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kim@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 321ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 744)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-16 14:34:44 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]", "authentication"=>{"name"=>"Kelvin", "email"=>"kim@g.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kim@g.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 339ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 560)
+
+
