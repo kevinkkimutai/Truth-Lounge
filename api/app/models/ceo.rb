@@ -1,0 +1,2 @@
+class Ceo < ApplicationRecord
+end
