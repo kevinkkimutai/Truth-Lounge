@@ -7344,3 +7344,871 @@ Processing by CeoController#employees_by_manager as */*
 Completed 200 OK in 29ms (Views: 3.5ms | ActiveRecord: 2.3ms | Allocations: 10632)
 
 
+Started GET "/user" for 127.0.0.1 at 2023-09-19 17:02:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230919135243_create_managers.rb
+
+
+):
+  
+activerecord (7.0.8) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8) lib/active_support/file_update_checker.rb:83:in `execute'
+activesupport (7.0.8) lib/active_support/file_update_checker.rb:93:in `execute_if_updated'
+activerecord (7.0.8) lib/active_record/migration.rb:634:in `block in call'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2023-09-19 17:02:45 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230919135243_create_managers.rb
+
+
+):
+  
+activerecord (7.0.8) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateManagers (20230919135243)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "managers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (8.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230919135243"]]
+  [1m[36mTRANSACTION (456.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 127.0.0.1 at 2023-09-19 17:03:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2023-09-19 17:03:33 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 3449)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-19 17:03:43 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 784)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2023-09-19 17:03:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:02 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man5@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 680)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:09 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man5@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 508)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:17 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man4@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 327ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 553)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:33 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man5@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 508)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:38 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man5@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man5@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 508)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:44 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 327ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 550)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:04:51 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 329ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 764)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-19 17:06:04 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man4@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 329ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 765)
+
+
+Started GET "/all_employees" for 127.0.0.1 at 2023-09-19 17:06:36 +0300
+Processing by CeoController#all_employees as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 633)
+
+
+Started GET "/managers_employees" for 127.0.0.1 at 2023-09-19 17:06:59 +0300
+Processing by ManagerController#all_employees as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:12:in `all_employees'
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1216)
+
+
+Started GET "/managers_employees/6" for 127.0.0.1 at 2023-09-19 17:07:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/managers_employees/6"):
+  
+Started GET "/managers_employees/6" for 127.0.0.1 at 2023-09-19 17:07:31 +0300
+Processing by ManagerController#all_employees as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "manager"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:12:in `all_employees'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/manager_controller.rb:19:in `all_employees'
+Completed 200 OK in 53ms (Views: 3.2ms | ActiveRecord: 2.4ms | Allocations: 10566)
+
+
+Started GET "/managers_employees/6" for 127.0.0.1 at 2023-09-19 17:08:46 +0300
+  
+SyntaxError (/home/kevin/proj/Truth-Lounge/api/app/controllers/manager_controller.rb:19: syntax error, unexpected tLABEL
+...       render json:  employees: employees 
+...                     ^~~~~~~~~~
+):
+  
+app/controllers/manager_controller.rb:19: syntax error, unexpected tLABEL
+app/controllers/manager_controller.rb:19: syntax error, unexpected tLABEL
+Started GET "/managers_employees/6" for 127.0.0.1 at 2023-09-19 17:08:56 +0300
+Processing by ManagerController#all_employees as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:12:in `all_employees'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/manager_controller.rb:19:in `all_employees'
+Completed 200 OK in 26ms (Views: 3.2ms | ActiveRecord: 2.5ms | Allocations: 10538)
+
+
+Started GET "/managers_employees/4" for 127.0.0.1 at 2023-09-19 17:09:07 +0300
+Processing by ManagerController#all_employees as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:12:in `all_employees'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 4]]
+  ↳ app/controllers/manager_controller.rb:19:in `all_employees'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1696)
+
+
+Started GET "/employees/4" for 127.0.0.1 at 2023-09-19 17:13:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/employees/4"):
+  
+Started GET "/employee/4" for 127.0.0.1 at 2023-09-19 17:13:24 +0300
+Processing by CeoController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:17:in `single_employee'
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 1.8ms | Allocations: 9668)
+
+
+Started GET "/employee/4" for 127.0.0.1 at 2023-09-19 17:15:43 +0300
+Processing by CeoController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:17:in `single_employee'
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 9669)
+
+
+Started GET "/employee/5" for 127.0.0.1 at 2023-09-19 17:15:54 +0300
+Processing by CeoController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"5", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:17:in `single_employee'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1177)
+
+
+Started GET "/managers/4/employees/1" for 127.0.0.1 at 2023-09-19 17:18:32 +0300
+  
+ActionController::RoutingError (uninitialized constant AnagersController
+Did you mean?  ManagerController):
+  
+Started GET "/managers/4/employees/1" for 127.0.0.1 at 2023-09-19 17:18:46 +0300
+  
+ArgumentError ('Managers' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:25:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/managers/4/employees/1" for 127.0.0.1 at 2023-09-19 17:19:10 +0300
+  
+ArgumentError ('Manager' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:25:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/managers/4/employees/1" for 127.0.0.1 at 2023-09-19 17:19:20 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "employee_id"=>"1", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (29.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 118ms (Views: 0.2ms | ActiveRecord: 31.9ms | Allocations: 10355)
+
+
+Started GET "/managers/4/employees/4" for 127.0.0.1 at 2023-09-19 17:19:27 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "employee_id"=>"4", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1443)
+
+
+Started GET "/managers/4/employees/8" for 127.0.0.1 at 2023-09-19 17:19:32 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/4/employees/6" for 127.0.0.1 at 2023-09-19 17:19:36 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "employee_id"=>"6", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1443)
+
+
+Started GET "/managers/4/employees/9" for 127.0.0.1 at 2023-09-19 17:19:41 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "employee_id"=>"9", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 64ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:19:56 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 0.9ms | Allocations: 2250)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:20:05 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:20:10 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1896)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:20:20 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employe" for 127.0.0.1 at 2023-09-19 17:20:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/managers/6/employe"):
+  
+Started GET "/managers/6/employee" for 127.0.0.1 at 2023-09-19 17:21:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/managers/6/employee"):
+  
+Started GET "/managers/6/employees" for 127.0.0.1 at 2023-09-19 17:21:05 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 1895)
+
+
+Started GET "/managers/6/employees/1" for 127.0.0.1 at 2023-09-19 17:21:13 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"1", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/2" for 127.0.0.1 at 2023-09-19 17:21:17 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"2", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/3" for 127.0.0.1 at 2023-09-19 17:21:21 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"3", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 6ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/4" for 127.0.0.1 at 2023-09-19 17:21:27 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"4", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/5" for 127.0.0.1 at 2023-09-19 17:21:30 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"5", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/6" for 127.0.0.1 at 2023-09-19 17:21:32 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"6", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/7" for 127.0.0.1 at 2023-09-19 17:21:37 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"7", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:21:40 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 46ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/9" for 127.0.0.1 at 2023-09-19 17:21:44 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"9", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/9" for 127.0.0.1 at 2023-09-19 17:23:52 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"9", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 31ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 10375)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:23:55 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 7ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1444)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:23:57 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:24:27 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 401 Unauthorized in 24ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 9822)
+
+
+Started GET "/managers/6/employees/6" for 127.0.0.1 at 2023-09-19 17:24:36 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"6", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1416)
+
+
+Started GET "/managers/6/employees/7" for 127.0.0.1 at 2023-09-19 17:24:40 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"7", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1416)
+
+
+Started GET "/managers/6/employees" for 127.0.0.1 at 2023-09-19 17:25:46 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 2250)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:25:51 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1416)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:27:35 +0300
+Processing by ManagerController#single_employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `single_employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `single_employee'
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.9ms | Allocations: 12598)
+
+
+  
+NoMethodError (undefined method `name' for #<User:0x00007f0e2c6767b8>):
+  
+app/controllers/manager_controller.rb:47:in `single_employee'
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:27:39 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 2253)
+
+
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:28:09 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 22ms (Views: 3.0ms | ActiveRecord: 2.1ms | Allocations: 10627)
+
+
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:28:33 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 27ms (Views: 3.9ms | ActiveRecord: 2.8ms | Allocations: 10627)
+
+
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:29:01 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 25ms (Views: 3.9ms | ActiveRecord: 2.8ms | Allocations: 10627)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:29:06 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1425)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:30:10 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.3ms | Allocations: 11916)
+
+
+  
+NameError (undefined local variable or method `user' for #<ManagerController:0x00000000083ec8>
+Did you mean?  super):
+  
+app/controllers/manager_controller.rb:45:in `employee'
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:30:14 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 2252)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:30:18 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 3534)
+
+
+  
+NameError (undefined local variable or method `user' for #<ManagerController:0x000000000840a8>
+Did you mean?  super):
+  
+app/controllers/manager_controller.rb:45:in `employee'
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:32:20 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 9849)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:32:39 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 3.2ms | Allocations: 10076)
+
+
+Started GET "/managers/6/employees/" for 127.0.0.1 at 2023-09-19 17:33:09 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.9ms | Allocations: 2243)
+
+
+Started GET "/managers/6/employees" for 127.0.0.1 at 2023-09-19 17:33:12 +0300
+Processing by CeoController#employees_by_manager as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:27:in `employees_by_manager'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/ceo_controller.rb:29:in `employees_by_manager'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1896)
+
+
+Started GET "/managers/6/employees" for 127.0.0.1 at 2023-09-19 17:33:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/managers/6/employees"):
+  
+Started GET "/managers/6/employees/7" for 127.0.0.1 at 2023-09-19 17:34:03 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"7", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 401 Unauthorized in 21ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 9861)
+
+
+Started GET "/managers/6/employees/9" for 127.0.0.1 at 2023-09-19 17:34:11 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"9", "manager"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1446)
+
+
+Started GET "/managers/6/employees/8" for 127.0.0.1 at 2023-09-19 17:34:16 +0300
+Processing by ManagerController#employee as */*
+  Parameters: {"firstname"=>"Kelvin", "lastname"=>"kirui", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"6", "employee_id"=>"8", "manager"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:32:in `employee'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/manager_controller.rb:39:in `employee'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 1644)
+
+
