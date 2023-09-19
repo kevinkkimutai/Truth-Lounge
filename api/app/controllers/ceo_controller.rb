@@ -30,5 +30,18 @@ class CeoController < ApplicationController
       rescue ActiveRecord::RecordNotFound
         render json: { error: 'Manager not found' }, status: :not_found
       end
+
+        # drinks of a specific manager
+   def drinks_by_manager
+    if current_user.role!= 'CEO'
+        render json: { error: 'Only the CEO can access this.' }, status: :unauthorized
+        return
+      end
+    manager = User.find(params[:id])
+    drinks = manager.drinks
+    render json: { manager: manager.firstname, drinks: drinks}
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'Manager not found' }, status: :not_found
+  end
   end
   

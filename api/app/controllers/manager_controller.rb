@@ -53,5 +53,4 @@ class ManagerController < ApplicationController
       end
       
       
-      
 end

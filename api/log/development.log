@@ -8212,3 +8212,568 @@ Processing by ManagerController#employee as */*
 Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 1644)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDrinks (20230919144252)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "brand" varchar, "capacity" varchar, "price" varchar, "manager_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230919144252"]]
+  [1m[36mTRANSACTION (349.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 17:56:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant DrinkController
+Did you mean?  DrinksController):
+  
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 17:57:06 +0300
+  
+ActionController::RoutingError (uninitialized constant DrinkController
+Did you mean?  DrinksController):
+  
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 17:57:18 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007f0e340799c0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 2.4ms | Allocations: 26193)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<Drink:0x00007f0e3830b360>
+Did you mean?  password):
+  
+app/controllers/drinks_controller.rb:11:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 17:58:11 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007f0e380662e0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms | Allocations: 3176)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<Drink:0x00007f0e40b3c018>
+Did you mean?  password):
+  
+app/controllers/drinks_controller.rb:11:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 17:59:18 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007f0e355ff6c8>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.1ms | Allocations: 3175)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<Drink:0x00007f0e355de2e8>
+Did you mean?  password):
+  
+app/controllers/drinks_controller.rb:11:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:00:42 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007f0e34ec3b98>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.2ms | Allocations: 13361)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<Drink:0x00007f0e352f2200>
+Did you mean?  password):
+  
+app/controllers/drinks_controller.rb:13:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:02:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb4b71fa8>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 475ms (ActiveRecord: 2.0ms | Allocations: 62835)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<Drink:0x00007fabc4ef7870>
+Did you mean?  password):
+  
+app/controllers/drinks_controller.rb:12:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:03:42 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb46f11b8>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 422 Unprocessable Entity in 891ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 621434)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-19 18:04:00 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 825)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:04:10 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb802b028>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1336)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:07:47 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.1ms | Allocations: 11104)
+
+
+  
+NameError (undefined local variable or method `drink' for #<DrinksController:0x00000000011170>):
+  
+app/controllers/drinks_controller.rb:12:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:08:46 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabad21f6f0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+Completed 422 Unprocessable Entity in 97ms (Views: 0.2ms | ActiveRecord: 4.6ms | Allocations: 15875)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:08:50 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabad1659d0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mManager Load (0.5ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+Completed 422 Unprocessable Entity in 15ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 3031)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:09:38 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabad143448>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mManager Load (0.3ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+Completed 422 Unprocessable Entity in 13ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 3035)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:10:15 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabad0b3280>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:16:in `create_drink'
+Completed 422 Unprocessable Entity in 39ms (Views: 0.2ms | ActiveRecord: 4.0ms | Allocations: 15053)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:16:21 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms | Allocations: 11188)
+
+
+  
+NoMethodError (undefined method `drinks' for #<User:0x00007fabb0789318>):
+  
+app/controllers/drinks_controller.rb:11:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:16:45 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.9ms | Allocations: 11732)
+
+
+  
+NoMethodError (undefined method `drink' for #<User:0x00007fabb52d94a8>):
+  
+app/controllers/drinks_controller.rb:11:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:18:18 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 2.1ms | Allocations: 13012)
+
+
+  
+NoMethodError (undefined method `drink' for #<User:0x00007fabb86b0bf0>
+Did you mean?  drinks
+               drinks=):
+  
+app/controllers/drinks_controller.rb:11:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:18:27 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb06960a0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+Completed 422 Unprocessable Entity in 88ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 16780)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:19:31 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabc020b2a0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mManager Load (0.1ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+Completed 422 Unprocessable Entity in 35ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 15261)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:21:15 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb83ec298>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mManager Load (0.1ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+Completed 422 Unprocessable Entity in 10ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 3201)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:28:02 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb0a1c8f0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.0ms | Allocations: 9773)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'name' for User.):
+  
+app/controllers/drinks_controller.rb:10:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:28:29 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb0b42f40>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mManager Load (0.1ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:13:in `create_drink'
+Completed 422 Unprocessable Entity in 33ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 15039)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:30:31 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb528baf0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 422 Unprocessable Entity in 30ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 12694)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:32:23 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabb80fa058>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.3ms | Allocations: 12483)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/drinks_controller.rb:8:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:32:46 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabad4abef0>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:9:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:9:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:9:in `create_drink'
+Completed 422 Unprocessable Entity in 69ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 15026)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:33:38 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabac61a440>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+Completed 422 Unprocessable Entity in 53ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 15027)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:34:48 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :drink. Context: { controller: DrinksController, action: create_drink, request: #<ActionDispatch::Request:0x00007fabad07f840>, params: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "controller"=>"drinks", "action"=>"create_drink", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+Completed 422 Unprocessable Entity in 109ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 15027)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:36:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mManager Load (0.1ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+Completed 422 Unprocessable Entity in 626ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 673319)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:36:16 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:10:in `create_drink'
+Completed 422 Unprocessable Entity in 9ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2962)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:37:06 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 2.7ms | Allocations: 12656)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/drinks_controller.rb:10:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:37:26 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+Completed 422 Unprocessable Entity in 34ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 15102)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:41:53 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mManager Load (0.2ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+Completed 422 Unprocessable Entity in 52ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 16847)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:44:46 +0300
+  
+SyntaxError (/home/kevin/proj/Truth-Lounge/api/app/controllers/drinks_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/drinks_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/drinks_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:45:03 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:9:in `create_drink'
+  [1m[36mManager Load (0.1ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:9:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:9:in `create_drink'
+Completed 422 Unprocessable Entity in 41ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 15169)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:47:20 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mManager Load (0.3ms)[0m  [1m[34mSELECT "managers".* FROM "managers" WHERE "managers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+Completed 422 Unprocessable Entity in 35ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 14939)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:50:05 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mDrink Create (55.7ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "chrome"], ["brand", "gin"], ["capacity", "750 ml"], ["price", "950"], ["manager_id", "6"], ["created_at", "2023-09-19 15:50:05.212159"], ["updated_at", "2023-09-19 15:50:05.212159"]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mTRANSACTION (113.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+Completed 201 Created in 203ms (Views: 0.6ms | ActiveRecord: 171.6ms | Allocations: 14769)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-19 18:54:19 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 404 Not Found in 20ms (ActiveRecord: 2.5ms | Allocations: 10272)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Drink without an ID):
+  
+app/controllers/drinks_controller.rb:26:in `all_drinks'
+Started GET "/drinks" for 127.0.0.1 at 2023-09-19 18:55:14 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"750 ml", "price"=>"950"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:27:in `all_drinks'
+Completed 200 OK in 24ms (Views: 5.1ms | ActiveRecord: 2.6ms | Allocations: 12492)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-19 18:55:46 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mDrink Create (0.3ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "chrome"], ["brand", "gin"], ["capacity", "500 ml"], ["price", "650"], ["manager_id", "6"], ["created_at", "2023-09-19 15:55:46.897928"], ["updated_at", "2023-09-19 15:55:46.897928"]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mTRANSACTION (98.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+Completed 201 Created in 109ms (Views: 0.8ms | ActiveRecord: 99.4ms | Allocations: 3511)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-19 18:55:51 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:27:in `all_drinks'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1432)
+
+
+Started GET "/managers/6/drinks" for 127.0.0.1 at 2023-09-19 18:58:58 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650", "id"=>"6", "drink"=>{"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `drinks_by_manager'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", "6"]]
+  ↳ app/controllers/drinks_controller.rb:34:in `drinks_by_manager'
+Completed 200 OK in 30ms (Views: 6.5ms | ActiveRecord: 2.6ms | Allocations: 13477)
+
+
+Started GET "/managers/6/drinks" for 127.0.0.1 at 2023-09-19 19:00:31 +0300
+Processing by CeoController#drinks_by_manager as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ceo_controller.rb:36:in `drinks_by_manager'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", "6"]]
+  ↳ app/controllers/ceo_controller.rb:38:in `drinks_by_manager'
+Completed 200 OK in 34ms (Views: 7.6ms | ActiveRecord: 3.2ms | Allocations: 15380)
+
+
+Started GET "/managers/6/drinks" for 127.0.0.1 at 2023-09-19 19:00:59 +0300
+Processing by CeoController#drinks_by_manager as */*
+  Parameters: {"name"=>"chrome", "brand"=>"gin", "capacity"=>"500 ml", "price"=>"650", "id"=>"6", "ceo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 401 Unauthorized in 25ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 10098)
+
+

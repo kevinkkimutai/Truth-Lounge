@@ -10,8 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_19_135243) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_19_144252) do
   create_table "ceos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "capacity"
+    t.string "price"
+    t.string "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

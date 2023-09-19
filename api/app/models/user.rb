@@ -4,6 +4,7 @@ class User < ApplicationRecord
 # Define the manager-employee relationship
 has_many :employees, class_name: 'User', foreign_key: 'manager_id'
 belongs_to :manager, class_name: 'User', optional: true
+has_many :drinks, foreign_key: 'manager_id' 
 
 # Define the CEO-manager relationship
 belongs_to :ceo, class_name: 'User', optional: true

@@ -19,10 +19,15 @@ Rails.application.routes.draw do
 get '/all_employees', to: "ceo#all_employees"
 get '/employee/:id', to: "ceo#single_employee"
 get '/ceo/managers/:id/employees', to: 'ceo#employees_by_manager', as: 'employees_by_manager'
+get '/managers/:id/drinks', to: 'ceo#drinks_by_manager', as: 'drinks_by_manager'
 
 # manager routes
 get '/managers_employees/:id', to: "manager#all_employees"
 get '/managers/:id/employees/:employee_id', to: 'manager#employee', as: 'employee'
+
+# drinks roiutes
+post '/drinks', to: "drinks#create_drink"
+get '/drinks', to: "drinks#all_drinks"
 
 
 end
