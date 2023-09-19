@@ -7,13 +7,6 @@ class UsersController < ApplicationController
     render json: {user: user}
   end
 
-  def employees_by_manager
-    manager = User.find(params[:id])
-    employees = manager.employees
-    render json: employees
-  rescue ActiveRecord::RecordNotFound
-    render json: { error: 'Manager not found' }, status: :not_found
-  end
   
   # CEO action
   def create_ceo

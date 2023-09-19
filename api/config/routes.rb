@@ -9,10 +9,15 @@ Rails.application.routes.draw do
  post '/managers', to: 'users#create_manager'
  post '/employees', to: 'users#create_employee'
  get '/user', to: 'users#index'
- get '/managers/:id/employees', to: 'users#employees_by_manager', as: 'employees_by_manager'
+
 
  # user login/register
  post "/users/login", to: "authentication#login"
  post "/users/register", to: "users#create"
+
+#  ceo routes
+get '/all_employees', to: "ceo#all_employees"
+get '/employee/:id', to: "ceo#single_employee"
+get '/managers/:id/employees', to: 'ceo#employees_by_manager', as: 'employees_by_manager'
 
 end
