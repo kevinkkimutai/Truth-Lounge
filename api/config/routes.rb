@@ -9,7 +9,8 @@ Rails.application.routes.draw do
  post '/managers', to: 'users#create_manager'
  post '/employees', to: 'users#create_employee'
  get '/user', to: 'users#index'
-
+ put '/users/:id', to: 'users#update'
+ delete '/users/:id', to: 'users#destroy'
 
  # user login/register
  post "/users/login", to: "authentication#login"

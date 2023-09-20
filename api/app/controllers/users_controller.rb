@@ -61,7 +61,36 @@ class UsersController < ApplicationController
     end
   end
   
-  
+  # destroy user
+  def destroy
+    user = User.find(params[:id])
+    if current_user.role == 'CEO' && user.role == 'Manager'
+      if user.destroy
+        render json: { message: 'Manager deleted successfully' }
+      else
+        render json: { error: 'Failed to delete Manager' }, status: :unprocessable_entity
+      end
+    elsif current_user.role == 'Manager' && user.role == 'Employee'
+      if user.destroy
+        render json: { message: 'Employee deleted successfully' }
+      else
+        render json: { error: 'Failed to delete employee' }, status: :unprocessable_entity
+      end
+    else
+      render json: { error: 'Only the CEO can delete managers and employees' }, status: :unauthorized
+    end
+  end
+
+  # update user
+  def update
+    user = User.find(params[:id])
+    if user.update(user_params)
+      render json: { message: 'User updated successfully' }
+    else
+      render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
 
   def reset_password
     user = User.find_by(email: params[:email])

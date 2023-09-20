@@ -52,5 +52,5 @@ class ManagerController < ApplicationController
         render json: { error: 'Employee not found' }, status: :not_found
       end
       
-      
+     
 end
