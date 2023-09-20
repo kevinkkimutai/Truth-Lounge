@@ -29,13 +29,32 @@ end
     render json: { drinks: drinks }
   end
   
-  # drinks by a specific manager
-  def drinks_by_manager
-    manager_id = params[:manager_id]
-    drinks = Drink.where(manager_id: manager_id)
-    render json: { drinks: drinks }
-  end
+    # Get drinks added by the manager who created the employee
+    def drinks_added_by_manager
+      # Ensure the current user is an employee
+      if current_user&.employee?
+        # Find the manager who created the current employee
+        manager = current_user.manager
   
+        if manager
+          # Find drinks added by the manager
+          drinks = Drink.where(manager_id: manager.id)
+          render json: { drinks: drinks }
+        else
+          render json: { error: 'No manager found for this employee' }, status: :not_found
+        end
+      else
+        render json: { error: 'Only employees can access this action' }, status: :unauthorized
+      end
+    end
+
+    # drinks by specific managers
+    def drinks_by_manager
+      manager_id = params[:manager_id]
+      drinks = Drink.where(manager_id: manager_id)
+      render json: { drinks: drinks }
+    end
+    
 
  # update drink
 def update_drink

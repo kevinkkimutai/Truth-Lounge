@@ -10294,3 +10294,400 @@ Processing by DrinksController#drinks_by_manager as */*
 Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1200)
 
 
+Started GET "/drinks/manager/5" for 127.0.0.1 at 2023-09-20 17:27:07 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"5", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 401 Unauthorized in 17ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 9523)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:27:58 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp1@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 334ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 729)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:28:06 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp1@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 328ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 804)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:28:22 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 644)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:28:59 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 616)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:29:11 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp1@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 333ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 796)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:29:29 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 616)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:30:33 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 616)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:31:17 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 616)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:31:49 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 17ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 10063)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 17:32:23 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 616)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:32:34 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp1@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 329ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 984)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:32:59 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:33:03 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 616)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:34:28 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:29:in `all_drinks'
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.8ms | Allocations: 3035)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:34:38 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 616)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:36:16 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 21ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 10071)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:36:23 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 24ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 10070)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:40:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 403 Forbidden in 54ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 26818)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:42:43 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:29:in `all_drinks'
+Completed 200 OK in 52ms (Views: 18.8ms | ActiveRecord: 3.5ms | Allocations: 44004)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:42:55 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:29:in `all_drinks'
+Completed 200 OK in 82ms (Views: 14.6ms | ActiveRecord: 2.8ms | Allocations: 60727)
+
+
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:44:23 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"6", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ? AND "drinks"."employee_id" = ?[0m  [["manager_id", 6], ["employee_id", 8]]
+  ↳ app/controllers/drinks_controller.rb:38:in `drinks_by_manager'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 1345)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: drinks.employee_id):
+  
+app/controllers/drinks_controller.rb:38:in `drinks_by_manager'
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:47:37 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"6", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.8ms | Allocations: 12295)
+
+
+  
+NameError (undefined local variable or method `drinks' for #<DrinksController:0x0000000000dd18>
+Did you mean?  drinks_url):
+  
+app/controllers/drinks_controller.rb:34:in `drinks_by_manager'
+Started GET "/drinks/manager" for 127.0.0.1 at 2023-09-20 17:54:10 +0300
+Processing by DrinksController#drinks_added_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:37:in `drinks_added_by_manager'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/drinks_controller.rb:42:in `drinks_added_by_manager'
+Completed 200 OK in 51ms (Views: 8.1ms | ActiveRecord: 1.8ms | Allocations: 14936)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:54:59 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man1@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 327ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 955)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:55:20 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man1@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man1@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 799)
+
+
+Started POST "/employee" for 127.0.0.1 at 2023-09-20 17:56:10 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/employee"):
+  
+Started POST "/employees" for 127.0.0.1 at 2023-09-20 17:56:17 +0300
+Processing by UsersController#create_employee as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create_employee, request: #<ActionDispatch::Request:0x00007f28d0f93e68>, params: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create_employee", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp2@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+Completed 422 Unprocessable Entity in 1016ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 609905)
+
+
+Started POST "/employees" for 127.0.0.1 at 2023-09-20 17:56:25 +0300
+Processing by UsersController#create_employee as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create_employee, request: #<ActionDispatch::Request:0x00007f28c4179410>, params: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create_employee", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp2@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "role", "email", "password_digest", "reset_password_token", "reset_password_token_expires_at", "created_at", "updated_at", "manager_id", "ceo_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["firstname", "kelvin"], ["lastname", "Kimutai"], ["role", "Employee"], ["email", "emp2@truth.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_token_expires_at", "[FILTERED]"], ["created_at", "2023-09-20 14:56:26.031379"], ["updated_at", "2023-09-20 14:56:26.031379"], ["manager_id", 3], ["ceo_id", nil]]
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+  [1m[36mTRANSACTION (165.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create_employee'
+Completed 201 Created in 499ms (Views: 0.6ms | ActiveRecord: 166.1ms | Allocations: 3664)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:56:51 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emp2@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 329ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:57:07 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 755)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:57:21 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:29:in `all_drinks'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1325)
+
+
+Started GET "/drinks/manager" for 127.0.0.1 at 2023-09-20 17:57:29 +0300
+Processing by DrinksController#drinks_added_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:37:in `drinks_added_by_manager'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 3]]
+  ↳ app/controllers/drinks_controller.rb:42:in `drinks_added_by_manager'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1756)
+
+
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:57:46 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"6", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/drinks_controller.rb:55:in `drinks_by_manager'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1344)
+
+
+Started GET "/drinks/manager/4" for 127.0.0.1 at 2023-09-20 17:57:52 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"4", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 4]]
+  ↳ app/controllers/drinks_controller.rb:55:in `drinks_by_manager'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1221)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:58:09 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"emp2@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 752)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 17:58:37 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mDrink Create (0.4ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "kibao"], ["brand", "spirit"], ["capacity", "750ml"], ["price", "850"], ["manager_id", 3], ["created_at", "2023-09-20 14:58:37.198740"], ["updated_at", "2023-09-20 14:58:37.198740"]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (123.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+Completed 201 Created in 133ms (Views: 0.4ms | ActiveRecord: 124.2ms | Allocations: 3380)
+
+
+Started GET "/drinks/3" for 127.0.0.1 at 2023-09-20 17:58:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/drinks/3"):
+  
+Started GET "/drinks/manager/3" for 127.0.0.1 at 2023-09-20 17:59:05 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "manager_id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 3]]
+  ↳ app/controllers/drinks_controller.rb:55:in `drinks_by_manager'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1341)
+
+
+Started GET "/drinks/manager/3" for 127.0.0.1 at 2023-09-20 17:59:13 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "manager_id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 3]]
+  ↳ app/controllers/drinks_controller.rb:55:in `drinks_by_manager'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1344)
+
+
+Started GET "/drinks/manager" for 127.0.0.1 at 2023-09-20 17:59:18 +0300
+Processing by DrinksController#drinks_added_by_manager as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:37:in `drinks_added_by_manager'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 3]]
+  ↳ app/controllers/drinks_controller.rb:42:in `drinks_added_by_manager'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1894)
+
+

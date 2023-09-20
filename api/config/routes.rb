@@ -30,6 +30,7 @@ post '/drinks', to: "drinks#create_drink"
 get '/drinks', to: "drinks#all_drinks"
 put '/drinks/:id', to: 'drinks#update_drink' 
 delete '/drinks/:id', to: 'drinks#destroy_drink'
+get '/drinks/manager', to: 'drinks#drinks_added_by_manager'
 get 'drinks/manager/:manager_id', to: 'drinks#drinks_by_manager', as: 'drinks_by_manager'
 
 

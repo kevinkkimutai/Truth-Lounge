@@ -31,6 +31,5 @@ class CeoController < ApplicationController
         render json: { error: 'Manager not found' }, status: :not_found
       end
 
-
   end
   
