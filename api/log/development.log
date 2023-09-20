@@ -8898,3 +8898,1399 @@ Processing by UsersController#destroy as */*
 Completed 200 OK in 118ms (Views: 0.2ms | ActiveRecord: 112.3ms | Allocations: 2338)
 
 
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 15:00:09 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"_json"=>[{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"ceo@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}], "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 400 Bad Request in 37ms (ActiveRecord: 1.4ms | Allocations: 9641)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: drink):
+  
+app/controllers/drinks_controller.rb:34:in `drink_params'
+app/controllers/drinks_controller.rb:7:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 15:00:33 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"_json"=>[{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}], "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.1ms | Allocations: 662)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: drink):
+  
+app/controllers/drinks_controller.rb:34:in `drink_params'
+app/controllers/drinks_controller.rb:7:in `create_drink'
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 15:00:39 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mDrink Create (0.3ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "kibao"], ["brand", "spirit"], ["capacity", "750ml"], ["price", "850"], ["manager_id", "6"], ["created_at", "2023-09-20 12:00:39.322573"], ["updated_at", "2023-09-20 12:00:39.322573"]]
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+  [1m[36mTRANSACTION (105.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:12:in `create_drink'
+Completed 201 Created in 222ms (Views: 0.7ms | ActiveRecord: 106.2ms | Allocations: 20236)
+
+
+Started PUT "/drinks/3" for 127.0.0.1 at 2023-09-20 15:05:14 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/drinks/3"):
+  
+Started PUT "/drink/3" for 127.0.0.1 at 2023-09-20 15:05:24 +0300
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for DrinksController):
+  
+actionpack (7.0.8) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PUT "/drink/3" for 127.0.0.1 at 2023-09-20 15:05:56 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 31ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 12335)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 15:06:12 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 792)
+
+
+Started DELETE "/drink/3" for 127.0.0.1 at 2023-09-20 15:06:38 +0300
+  
+AbstractController::ActionNotFound (The action 'destroy_drink' could not be found for DrinksController):
+  
+actionpack (7.0.8) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/drink/3" for 127.0.0.1 at 2023-09-20 15:07:05 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:46:in `destroy_drink'
+Completed 401 Unauthorized in 31ms (Views: 0.4ms | ActiveRecord: 2.9ms | Allocations: 12320)
+
+
+Started DELETE "/drink/3" for 127.0.0.1 at 2023-09-20 15:08:14 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:46:in `destroy_drink'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1032)
+
+
+Started DELETE "/drink/2" for 127.0.0.1 at 2023-09-20 15:08:18 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:46:in `destroy_drink'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1031)
+
+
+Started DELETE "/drink/2" for 127.0.0.1 at 2023-09-20 15:16:44 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:45:in `destroy_drink'
+Completed 401 Unauthorized in 36ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 11636)
+
+
+Started DELETE "/manager/6drink/2" for 127.0.0.1 at 2023-09-20 15:22:33 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/manager/6drink/2"):
+  
+Started DELETE "/manager/6/drink/2" for 127.0.0.1 at 2023-09-20 15:22:39 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/manager/6/drink/2"):
+  
+Started PUT "/manager/6/drink/2" for 127.0.0.1 at 2023-09-20 15:23:06 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 28ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 12318)
+
+
+Started PUT "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:26:25 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/drinks/2/update"):
+  
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:26:35 +0300
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for DrinksController):
+  
+actionpack (7.0.8) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:27:05 +0300
+  
+AbstractController::ActionNotFound (The action 'update_drinks' could not be found for DrinksController
+Did you mean?  update_drink):
+  
+actionpack (7.0.8) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:27:18 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 32ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 12352)
+
+
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:30:14 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 26ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 12326)
+
+
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:31:18 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 121ms (Views: 0.3ms | ActiveRecord: 6.9ms | Allocations: 61788)
+
+
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:33:06 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 24ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 12362)
+
+
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:36:07 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 53ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 12370)
+
+
+Started PATCH "/drinks/2/update" for 127.0.0.1 at 2023-09-20 15:36:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 82ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 61789)
+
+
+Started DELETE "/drinks/2/delete" for 127.0.0.1 at 2023-09-20 15:39:54 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"2", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:48:in `destroy_drink'
+Completed 401 Unauthorized in 31ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 12353)
+
+
+Started DELETE "/drinks/3/delete" for 127.0.0.1 at 2023-09-20 15:40:04 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:48:in `destroy_drink'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1048)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:40:42 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 25ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 12385)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:41:46 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:33:in `update_drink'
+Completed 401 Unauthorized in 65ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 12330)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:42:38 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 62ms (Views: 0.2ms | ActiveRecord: 28.1ms | Allocations: 12859)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:43:38 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 37ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 12348)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:47:57 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.4ms | Allocations: 14612)
+
+
+  
+NoMethodError (undefined method `user_id' for #<Drink:0x00007fb7b05aa7c0>):
+  
+app/controllers/drinks_controller.rb:35:in `update_drink'
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:49:17 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.5ms | Allocations: 15502)
+
+
+  
+NoMethodError (undefined method `user' for #<Drink:0x00007fb7c4a47490>
+Did you mean?  user_id):
+  
+app/models/drink.rb:10:in `user_id'
+app/controllers/drinks_controller.rb:35:in `update_drink'
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:51:29 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 29ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 12325)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:55:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 1.8ms | Allocations: 28630)
+
+
+  
+NoMethodError (undefined method `authorized?' for #<DrinksController:0x000000000098d0>
+Did you mean?  authorize!):
+  
+app/controllers/application_controller.rb:25:in `authorize_request'
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 15:56:00 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 58ms (Views: 0.3ms | ActiveRecord: 3.7ms | Allocations: 43812)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 16:02:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 90ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 61754)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 16:07:20 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:32:in `update_drink'
+Completed 401 Unauthorized in 25ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 12335)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 16:09:09 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:33:in `update_drink'
+Completed 401 Unauthorized in 26ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 12514)
+
+
+Started PUT "/drinks/3/update" for 127.0.0.1 at 2023-09-20 16:09:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850", "id"=>"3", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:33:in `update_drink'
+Completed 401 Unauthorized in 79ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 61907)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 16:12:18 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1850", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mDrink Create (0.4ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "red lebel"], ["brand", "whisky"], ["capacity", "750 ml"], ["price", "1850"], ["manager_id", "6"], ["created_at", "2023-09-20 13:12:18.602451"], ["updated_at", "2023-09-20 13:12:18.602451"]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (147.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+Completed 201 Created in 185ms (Views: 0.5ms | ActiveRecord: 150.5ms | Allocations: 17031)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:13:05 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1850", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 29ms (Views: 7.9ms | ActiveRecord: 3.0ms | Allocations: 12975)
+
+
+Started POST "/drinks/4" for 127.0.0.1 at 2023-09-20 16:13:32 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/drinks/4"):
+  
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:13:39 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1163)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:14:29 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 59ms (Views: 1.1ms | ActiveRecord: 3.7ms | Allocations: 12327)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:14:36 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 1757)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:16:21 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 42ms (Views: 11.1ms | ActiveRecord: 4.3ms | Allocations: 12952)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:16:29 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1277)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:16:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 97ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 61908)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:18:42 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 53ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 12351)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:19:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 74ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 61783)
+
+
+Started GET "/drinks/4" for 127.0.0.1 at 2023-09-20 16:20:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/drinks/4"):
+  
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:20:07 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 1794)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:23:24 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 35ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 12356)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:25:09 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+Completed 204 No Content in 31ms (ActiveRecord: 3.5ms | Allocations: 12307)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:25:18 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 1762)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:26:04 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+Completed 204 No Content in 4ms (ActiveRecord: 0.4ms | Allocations: 969)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:27:04 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+Completed 204 No Content in 61ms (ActiveRecord: 7.6ms | Allocations: 12252)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:28:01 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red lebel", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+Completed 401 Unauthorized in 30ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 12360)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 16:28:42 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"ceo@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"ceo@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ceo@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 344ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 984)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:29:11 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1777)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:29:45 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"500 ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"500 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 613)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:29:53 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"500 ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"500 ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1716)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 16:30:36 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man4@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 401 Unauthorized in 338ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 554)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 16:30:42 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man4@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 351ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started POST "/user" for 127.0.0.1 at 2023-09-20 16:31:08 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started POST "/users" for 127.0.0.1 at 2023-09-20 16:31:11 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2023-09-20 16:31:16 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 782)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:31:54 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1031)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:36:58 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 26ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 12319)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:39:33 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 36ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 12319)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:39:54 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+  [1m[36mDrink Update (0.4ms)[0m  [1m[33mUPDATE "drinks" SET "name" = ?, "brand" = ?, "capacity" = ?, "price" = ?, "updated_at" = ? WHERE "drinks"."id" = ?[0m  [["name", "kibao"], ["brand", "spirit"], ["capacity", "250ml"], ["price", "850"], ["updated_at", "2023-09-20 13:39:54.764974"], ["id", 4]]
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+  [1m[36mTRANSACTION (142.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+Completed 200 OK in 181ms (Views: 0.6ms | ActiveRecord: 145.9ms | Allocations: 17630)
+
+
+Started PUT "/drinks" for 127.0.0.1 at 2023-09-20 16:40:00 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/drinks"):
+  
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:40:04 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1749)
+
+
+Started PUT "/drinks" for 127.0.0.1 at 2023-09-20 16:43:58 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/drinks"):
+  
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:44:04 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 26ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 12318)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:45:08 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 29ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 12318)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:49:14 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 34ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 12350)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:49:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 84ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 61788)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:50:08 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 27ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 12357)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:50:21 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mDrink Update (0.5ms)[0m  [1m[33mUPDATE "drinks" SET "capacity" = ?, "updated_at" = ? WHERE "drinks"."id" = ?[0m  [["capacity", "1000ml"], ["updated_at", "2023-09-20 13:50:21.962225"], ["id", 4]]
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mTRANSACTION (456.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+Completed 200 OK in 510ms (Views: 0.6ms | ActiveRecord: 459.6ms | Allocations: 17650)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:50:43 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"1000ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1753)
+
+
+Started POST "/drinks/4" for 127.0.0.1 at 2023-09-20 16:51:19 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/drinks/4"):
+  
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:51:24 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"red Label", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "id"=>"4", "drink"=>{"name"=>"red Label", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mDrink Update (0.4ms)[0m  [1m[33mUPDATE "drinks" SET "name" = ?, "brand" = ?, "capacity" = ?, "price" = ?, "updated_at" = ? WHERE "drinks"."id" = ?[0m  [["name", "red Label"], ["brand", "whisky"], ["capacity", "1000 ml"], ["price", "1850"], ["updated_at", "2023-09-20 13:51:24.093346"], ["id", 4]]
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mTRANSACTION (150.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+Completed 200 OK in 164ms (Views: 0.4ms | ActiveRecord: 151.7ms | Allocations: 3746)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:51:29 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"red Label", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850", "drink"=>{"name"=>"red Label", "brand"=>"whisky", "capacity"=>"1000 ml", "price"=>"1850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1714)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 16:52:07 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man3@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man3@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man3@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 328ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 974)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:52:29 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man3@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 1713)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:52:53 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mDrink Update (0.3ms)[0m  [1m[33mUPDATE "drinks" SET "name" = ?, "brand" = ?, "capacity" = ?, "price" = ?, "updated_at" = ? WHERE "drinks"."id" = ?[0m  [["name", "kibao"], ["brand", "spirit"], ["capacity", "750ml"], ["price", "850"], ["updated_at", "2023-09-20 13:52:53.561239"], ["id", 4]]
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+  [1m[36mTRANSACTION (121.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:42:in `update_drink'
+Completed 200 OK in 141ms (Views: 0.4ms | ActiveRecord: 122.3ms | Allocations: 3718)
+
+
+Started PUT "/drinks" for 127.0.0.1 at 2023-09-20 16:53:09 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/drinks"):
+  
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:53:13 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1712)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 16:53:42 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 783)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 16:54:23 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 3441)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 16:54:34 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 1.5ms | Allocations: 3477)
+
+
+Started PUT "/drinks" for 127.0.0.1 at 2023-09-20 16:54:38 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/drinks"):
+  
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:54:44 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1163)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:54:58 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+  [1m[36mDrink Update (0.4ms)[0m  [1m[33mUPDATE "drinks" SET "manager_id" = ?, "updated_at" = ? WHERE "drinks"."id" = ?[0m  [["manager_id", "5"], ["updated_at", "2023-09-20 13:54:58.240538"], ["id", 4]]
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+  [1m[36mTRANSACTION (131.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:39:in `update_drink'
+Completed 200 OK in 171ms (Views: 0.6ms | ActiveRecord: 135.4ms | Allocations: 15273)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:55:23 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850", "id"=>"4", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"750ml", "price"=>"850"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 25ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 12319)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 16:55:51 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "firstname": "kelvin",
+  "lastname": "Kimutai",
+  "email": "man4@truth.com",
+  "password": "1111",
+  "password_confirmation": "2222"
+}
+
+{
+  "name": "kibao",
+  "brand": "spirit",
+  "capacity": "750ml",
+  "price": "850"
+}
+Processing by AuthenticationController#login as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 16:55:58 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man4@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 325ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 921)
+
+
+Started POST "/user" for 127.0.0.1 at 2023-09-20 16:56:17 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started GET "/user" for 127.0.0.1 at 2023-09-20 16:56:21 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 781)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:56:37 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:36:in `update_drink'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1030)
+
+
+Started PUT "/drinks/4" for 127.0.0.1 at 2023-09-20 16:59:32 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"4", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 27ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 12318)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 16:59:42 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 792)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDrinks (20230919144252)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "drinks"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230919144252"]]
+  [1m[36mTRANSACTION (162.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDrinks (20230919144252)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "brand" varchar, "capacity" varchar, "price" varchar, "manager_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230919144252"]]
+  [1m[36mTRANSACTION (139.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 17:02:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250 ml", "price"=>"250", "drink"=>{"name"=>"kibao", "brand"=>"spirit", "capacity"=>"250 ml", "price"=>"250"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mDrink Create (0.3ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "kibao"], ["brand", "spirit"], ["capacity", "250 ml"], ["price", "250"], ["manager_id", 6], ["created_at", "2023-09-20 14:02:25.619801"], ["updated_at", "2023-09-20 14:02:25.619801"]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (130.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+Completed 201 Created in 160ms (Views: 0.5ms | ActiveRecord: 133.0ms | Allocations: 14534)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2023-09-20 17:03:03 +0300
+Processing by DrinksController#create_drink as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"250 ml", "price"=>"500", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"250 ml", "price"=>"500"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mDrink Create (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "brand", "capacity", "price", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Red Label"], ["brand", "whisky"], ["capacity", "250 ml"], ["price", "500"], ["manager_id", 6], ["created_at", "2023-09-20 14:03:03.297221"], ["updated_at", "2023-09-20 14:03:03.297221"]]
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+  [1m[36mTRANSACTION (189.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:14:in `create_drink'
+Completed 201 Created in 200ms (Views: 0.4ms | ActiveRecord: 190.4ms | Allocations: 3062)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:03:06 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"250 ml", "price"=>"500", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"250 ml", "price"=>"500"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1484)
+
+
+Started PUT "/drinks/2" for 127.0.0.1 at 2023-09-20 17:03:43 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500", "id"=>"2", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+  [1m[36mDrink Update (0.4ms)[0m  [1m[33mUPDATE "drinks" SET "capacity" = ?, "price" = ?, "updated_at" = ? WHERE "drinks"."id" = ?[0m  [["capacity", "750 ml"], ["price", "2500"], ["updated_at", "2023-09-20 14:03:43.981263"], ["id", 2]]
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+  [1m[36mTRANSACTION (96.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:38:in `update_drink'
+Completed 200 OK in 113ms (Views: 0.8ms | ActiveRecord: 97.5ms | Allocations: 3669)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:03:56 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1420)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:04:12 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 792)
+
+
+Started GET "/drinks" for 127.0.0.1 at 2023-09-20 17:04:21 +0300
+Processing by DrinksController#all_drinks as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"2500"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:30:in `all_drinks'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1420)
+
+
+Started PUT "/drinks/2" for 127.0.0.1 at 2023-09-20 17:04:39 +0300
+Processing by DrinksController#update_drink as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1800", "id"=>"2", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1800"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:35:in `update_drink'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1028)
+
+
+Started DELETE "/drinks/1" for 127.0.0.1 at 2023-09-20 17:04:53 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1800", "id"=>"1", "drink"=>{"name"=>"Red Label", "brand"=>"whisky", "capacity"=>"750 ml", "price"=>"1800"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:52:in `destroy_drink'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1028)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-09-20 17:05:24 +0300
+Processing by AuthenticationController#login as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "man4@truth.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 328ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 939)
+
+
+Started GET "/user" for 127.0.0.1 at 2023-09-20 17:05:39 +0300
+Processing by UsersController#index as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 752)
+
+
+Started DELETE "/drinks/1" for 127.0.0.1 at 2023-09-20 17:05:54 +0300
+Processing by DrinksController#destroy_drink as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"1", "drink"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:52:in `destroy_drink'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/drinks_controller.rb:55:in `destroy_drink'
+  [1m[36mDrink Destroy (0.4ms)[0m  [1m[31mDELETE FROM "drinks" WHERE "drinks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/drinks_controller.rb:55:in `destroy_drink'
+  [1m[36mTRANSACTION (108.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/drinks_controller.rb:55:in `destroy_drink'
+Completed 200 OK in 117ms (Views: 0.3ms | ActiveRecord: 108.9ms | Allocations: 2343)
+
+
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:09:56 +0300
+  
+ArgumentError (Invalid route name, already in use: 'drinks_by_manager' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:34:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:11:43 +0300
+  
+ArgumentError (Invalid route name, already in use: 'drinks_by_manager' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:34:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:11:59 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"6", "drink"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.7ms | Allocations: 12211)
+
+
+  
+NameError (undefined local variable or method `manager' for #<DrinksController:0x0000000002c650>
+Did you mean?  manager_id):
+  
+app/controllers/drinks_controller.rb:36:in `drinks_by_manager'
+Started GET "/drinks/manager/6" for 127.0.0.1 at 2023-09-20 17:12:19 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"6", "drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 6]]
+  ↳ app/controllers/drinks_controller.rb:36:in `drinks_by_manager'
+Completed 200 OK in 33ms (Views: 11.1ms | ActiveRecord: 3.4ms | Allocations: 12538)
+
+
+Started GET "/drinks/manager/5" for 127.0.0.1 at 2023-09-20 17:12:41 +0300
+Processing by DrinksController#drinks_by_manager as */*
+  Parameters: {"firstname"=>"kelvin", "lastname"=>"Kimutai", "email"=>"man4@truth.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "manager_id"=>"5", "drink"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `authorize_request'
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."manager_id" = ?[0m  [["manager_id", 5]]
+  ↳ app/controllers/drinks_controller.rb:36:in `drinks_by_manager'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1200)
+
+

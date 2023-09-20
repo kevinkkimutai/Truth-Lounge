@@ -5,7 +5,7 @@ class CreateDrinks < ActiveRecord::Migration[7.0]
       t.string :brand
       t.string :capacity
       t.string :price
-      t.string :manager_id
+      t.integer :manager_id
 
       t.timestamps
     end

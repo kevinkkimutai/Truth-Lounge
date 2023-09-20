@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_144252) do
     t.string "brand"
     t.string "capacity"
     t.string "price"
-    t.string "manager_id"
+    t.integer "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,5 +5,6 @@ class Drink < ApplicationRecord
     validates :brand, presence: true
     validates :capacity, presence: true
     validates :price, presence: true
+
    
 end
