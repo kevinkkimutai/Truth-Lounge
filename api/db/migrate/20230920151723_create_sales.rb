@@ -3,6 +3,7 @@ class CreateSales < ActiveRecord::Migration[7.0]
     create_table :sales do |t|
       t.integer :employee_id
       t.integer :drink_id
+      t.float :price
       t.integer :quantity
       t.float :total_price
 

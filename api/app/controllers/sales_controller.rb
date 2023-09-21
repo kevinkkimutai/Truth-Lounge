@@ -28,7 +28,16 @@ class SalesController < ApplicationController
       private
     
       def sale_params
-        params.require(:sale).permit(:drink_id, :quantity, :total_price)
+        drink = Drink.find(params[:sale][:drink_id])
+        {
+          drink_id: drink.id,
+          quantity: params[:sale][:quantity].to_i,
+          price: drink.price.to_f, 
+          total_price: drink.price.to_f * params[:sale][:quantity].to_i, # Calculate the total_price
+          employee_id: current_user.id
+        }
       end
+      
+  
 end
 
