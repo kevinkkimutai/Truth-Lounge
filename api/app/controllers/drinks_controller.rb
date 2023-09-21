@@ -9,8 +9,6 @@ class DrinksController < ApplicationController
     # Set the manager_id to the ID of the logged-in Manager
     drink.manager_id = current_user.id if current_user&.manager?
 
-    puts "Drink manager_id: #{drink.manager_id}" # Add this line to check the value of drink.manager_id
-
     if drink.save
       render json: { drink: drink }, status: :created
     else

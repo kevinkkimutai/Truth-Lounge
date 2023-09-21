@@ -33,5 +33,10 @@ delete '/drinks/:id', to: 'drinks#destroy_drink'
 get '/drinks/manager', to: 'drinks#drinks_added_by_manager'
 get 'drinks/manager/:manager_id', to: 'drinks#drinks_by_manager', as: 'drinks_by_manager'
 
+# sales routes
+post '/sales', to: 'sales#create', as: 'create_sale'
+get '/sales', to: 'sales#index', as: 'list_sales'
+get '/sales_by_employee', to: 'sales#employee_sales'
+
 
 end

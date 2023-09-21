@@ -1,6 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
-   
+
+    # employee relationship
+has_many :sales, foreign_key: 'employee_id'
+
 # Define the manager-employee relationship
 has_many :employees, class_name: 'User', foreign_key: 'manager_id'
 belongs_to :manager, class_name: 'User', optional: true
