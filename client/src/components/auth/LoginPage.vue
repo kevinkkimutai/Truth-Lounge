@@ -38,12 +38,12 @@ async function login() {
 
 
 <template>
- <div class="flex">
-  <div class="w-full">
-
-  <img alt="Vue logo" class="logo" src="@/assets/truth_dark.png" width="525" height="525" />
-<div class="sm:flex sm:items-center sm:justify-center mb-5">
-      <ul class="flex mt-0 space-x-5 sm:justify-center sm:mt-0 socials">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 items-center justify-center mt-10 sm:mt-10">
+    <!-- logo section -->
+    <div class="text-gray-500 dark:text-gray-400 items-center justify-center">
+      <div alt="Vue logo" class="logo justify-center" ></div>
+<div class="sm:flex sm:items-center sm:justify-center">
+      <ul class="flex mt-0 space-x-5 sm:justify-center justify-center sm:mt-0 socials">
           <li href="#" class="text-blue-600 hover:text-blue-900 dark:hover:text-white">
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                     <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
@@ -71,10 +71,10 @@ async function login() {
           </li>
       </ul>
       </div>
-
-   </div>
-  <div class="greetings w-full">
-    <form class="login" @submit.prevent="login" >
+    </div>
+    <!-- form section -->
+    <div class="mb-3 text-gray-500 dark:text-gray-400">
+      <form class="login" @submit.prevent="login" >
       <h1 class="heading">Login Form</h1>
 
       <div class="relative z-0 w-full mb-6 group">
@@ -156,8 +156,8 @@ async function login() {
   </span>
 </div>
     </form>
-  </div>
- </div>
+    </div>
+</div>
 </template>
 <style lang="scss" scoped>
 .login {
@@ -174,5 +174,11 @@ async function login() {
 
 .fpassword {
   float: right;
+}
+.logo {
+  background-image: url(../../assets/truth_dark.png);
+  width: 100%;
+  height: 400px;
+  background-position: center;
 }
 </style>>
